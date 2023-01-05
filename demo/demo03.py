@@ -9,7 +9,7 @@ import concurrent.futures
 
 def plus(self: decimal):
     # 小数点后11 位精确到10米 10位精确到100米 9位精确到几百米
-    return self.quantize(decimal.Decimal("0.0000001"), rounding=decimal.ROUND_HALF_UP) + decimal.Decimal('0.0000001')
+    return self.quantize(decimal.Decimal("0.0001"), rounding=decimal.ROUND_HALF_UP) + decimal.Decimal('0.0005')
 
 
 def thread_func(x, y, polygon, reslutSet: set, projectionUtil: ProjectionUtils, shapelyUtils: ShapelyUtils):
@@ -21,10 +21,10 @@ def thread_func(x, y, polygon, reslutSet: set, projectionUtil: ProjectionUtils, 
         # print(shapelyUtils.ifPolygon(polygon, float(x), float(y)))
         if shapelyUtils.ifPolygon(polygon, projectTuple[0], projectTuple[1]):
             result=projectionUtil.unmapping(float(projectTuple[0]),float(projectTuple[1]))
-            # print(result)
+            print(result)
             #  反映射成经纬度列表
             reslutSet.add(result)
-
+    print(maxX-x/maxX)
 
 if __name__ == '__main__':
     # 1.使用工具类读取文件
