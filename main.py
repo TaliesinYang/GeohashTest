@@ -7,7 +7,7 @@ from utils.ShapelyUtils import ShapelyUtils
 
 def plus(self:decimal):
     # 小数点后11 位精确到10米 10位精确到100米 9位精确到几百米
-    return self.quantize(decimal.Decimal("0.00000000001"), rounding=decimal.ROUND_HALF_UP) + decimal.Decimal('0.00000000001')
+    return self.quantize(decimal.Decimal("0.00000000001"), rounding=decimal.ROUND_HALF_UP) + decimal.Decimal('0.00000000005')
 
 
 if __name__ == '__main__':

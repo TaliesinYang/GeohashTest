@@ -12,29 +12,6 @@ def plus(self:decimal):
 
 
 if __name__ == '__main__':
-    # 1.使用工具类读取文件
-    helper = FileUtil()
-    contents: str = helper.read_file('../myfile.txt')
-    strList: list[str] = contents.split("\n")
-    result: str = ""
-    coordinates = list()
-    for x in strList:
-        elem = x.split(" ")
-        coordinates.append((float(elem[0]),float(elem[1])))
-    print(str(coordinates))
-    # 假设你有一个经纬度列表，例如 [(0, 0), (0, 1), (1, 1), (1, 0)]
-    lng_lat_list = coordinates
-
-    # 使用 Polygon 构造函数创建一个 Polygon 对象
-    polygon = Polygon(lng_lat_list)
-
-    # 使用 boundary 属性获取经纬度区域的边界
-    boundary = polygon.boundary
-
-    # 使用 boundary.coords 属性获取经纬度坐标列表
-    lng_lat_coords = list(boundary.coords)
-
-    # 输出经纬度坐标列表
-    print(lng_lat_coords)
-
-
+    cityname = "达州市"
+    filepath = r"C:\Users\Talie\Documents\四川省21市\%s" % cityname
+    print(filepath)
