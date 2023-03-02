@@ -226,10 +226,10 @@ def distance(p1, p2):
 
 
 def main():
-    createPolygonBySelection()
+#    createPolygonBySelection()
     # 形成点或者图形
-    # excel_file = r"C:\Users\Talie\Documents\四川省21市 (2)\四川省21市.xlsx"
-    # getExcelList(createPolygonXY,excel_file)
+    excel_file = r"D:\develop\GeohashTest\QGIS\四川省21市.xlsx"
+    getExcelList(createPointXY,excel_file)
     # 打印选中点
 
 
